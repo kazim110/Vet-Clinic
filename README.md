@@ -1,44 +1,3 @@
-# curriculum-databases-projects-template
-
-> This template should be used for database related projects at Microverse.
-> Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
-
-
-## Getting Started
-
-This repository includes files with plain SQL that can be used to recreate a database:
-
-- Use [schema.sql](./schema.sql) to create all tables.
-- Use [data.sql](./data.sql) to populate tables with sample data.
-- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
-
-<a name="readme-top"></a>
-
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-After you're finished please remove all the comments and instructions!
--->
-
-
-<!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -63,11 +22,9 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 Vet-Clinic <a name="about-project"></a>
 
 > This project is for Vet Clinic that uses Postgre sql database for storing data.
-
-**[your_project__name]** is a Vet Clinic
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -95,11 +52,9 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
-- **[Create]**
-- **[Select]**
-- **[Insert]**
+- **[Set configuration for Create database and tables]**
+- **[Set configuration for Query database and tables]**
+- **[Set configuration for Insert into database and tables]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -171,7 +126,8 @@ I use Githud pages for the deployment of this web page.
 
 > Describe 1 - 3 features you will add to the project.
 
-- [X] **[UI]**
+- [X] **[Backend_Development]**
+- [X] **[Frontend_Development]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
