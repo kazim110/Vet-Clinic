@@ -155,6 +155,6 @@ If you like this project just keep an eye on the changes that I will bring over 
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](https://github.com/kazim110/Vet-Clinic/blob/query-update-animals/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
