@@ -29,7 +29,7 @@ VALUES (1,'digimon'),
 
 BEGIN;
 UPDATE animals SET species_id = 1 WHERE name LIKE '%mon';
-UPDATE animals SET species_id = 2 WHERE species_id IS NULL OR species_id = '';
+UPDATE animals SET species_id = 2 WHERE species_id IS NULL OR species_id = null;
 SELECT * FROM animals;
 COMMIT;
 

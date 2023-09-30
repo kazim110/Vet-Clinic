@@ -39,14 +39,14 @@ CREATE TABLE vets (
 CREATE TABLE specializations (
     id INT PRIMARY KEY NOT NULL,
     vet_id INT,
-    species_id INT,
+    species_id INT
 );
 
 CREATE TABLE visits (
     id INT PRIMARY KEY NOT NULL,
     date DATE,
     vet_id INT,
-    animal_id INT,
+    animal_id INT
 );
 
 
