@@ -29,7 +29,7 @@ VALUES (1,'digimon'),
 
 BEGIN;
 UPDATE animals SET species_id = 1 WHERE name LIKE '%mon';
-UPDATE animals SET species_id = 2 WHERE species_id IS NULL OR species_id = '';
+UPDATE animals SET species_id = 2 WHERE species_id IS NULL OR species_id = null;
 SELECT * FROM animals;
 COMMIT;
 
@@ -38,3 +38,37 @@ UPDATE animals SET owners_id = 2 WHERE name IN ('Gabumon','Pikachu');
 UPDATE animals SET owners_id = 3 WHERE name IN ('Devimon','Plantmon');
 UPDATE animals SET owners_id = 4 WHERE name IN ('Charmander','Squirtle','Blossom');
 UPDATE animals SET owners_id = 5 WHERE name IN ('Angemon','Boarmon');
+
+INSERT INTO vets (id, name, age, date_of_graduation)
+VALUES (1,'William Tatcher', 45, '2000-04-23'),
+(2,'Maisy Smith', 26, '2019-01-17'),
+(3,'Stephanie Mendez', 64, '1981-05-04'),
+(4,'Jack Harkness', 38, '2008-06-08');
+
+INSERT INTO specializations (id, vet_id, species_id)
+VALUES (1,1,2),
+(2,3,1),
+(3,3,2),
+(4,4,1);
+
+INSERT INTO visits (id, date, vet_id, animal_id)
+VALUES (1,'2020-05-24',1,1),
+(2,'2020-04-22',3,1),
+(3,'2021-02-02',4,2),
+(4,'2020-01-05',2,3),
+(5,'2020-03-08',2,3),
+(6,'2020-05-14',2,3),
+(7,'2021-05-04',3,4),
+(8,'2021-02-24',4,5),
+(9,'2019-12-21',2,6),
+(10,'2020-08-10',1,6),
+(11,'2021-04-07',2,6),
+(12,'2019-09-29',3,7),
+(13,'2020-10-03',4,8),
+(14,'2020-11-04',4,8),
+(15,'2019-01-24',2,9),
+(16,'2019-05-15',2,9),
+(17,'2020-02-27',2,9),
+(18,'2020-08-03',2,9),
+(19,'2020-05-24',3,10),
+(20,'2021-01-11',1,10);
