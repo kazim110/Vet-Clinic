@@ -115,12 +115,12 @@ JOIN animals a ON v.animal_id = a.id
 GROUP BY a.name 
 ORDER BY visit_count DESC LIMIT 1;
 
-SELECT vet.name AS vet_name, MIN(v.date) AS first_visit_date 
+SELECT a.name AS animal_name 
 FROM visits v 
-JOIN vets vet ON v.vet_id = vet.id 
 JOIN animals a ON v.animal_id = a.id 
-WHERE vet.name = 'Maisy Smith' 
-GROUP BY vet.name;
+JOIN vets vt ON v.vet_id = vt.id 
+WHERE vt.name = 'Maisy Smith'  
+ORDER BY v.date ASC LIMIT 1;
 
 SELECT a.name AS animal_name, vet.name AS vet_name, v.date 
 FROM visits v 
@@ -135,11 +135,10 @@ JOIN vets vet ON v.vet_id = vet.id
 LEFT JOIN specializations s ON vet.id = s.vet_id AND a.species_id = s.species_id 
 WHERE s.vet_id IS NULL;
 
-SELECT s.name AS specialty, COUNT(*) AS visit_count 
-FROM visits v 
-JOIN animals a ON v.animal_id = a.id 
-JOIN specializations sp ON a.species_id = sp.species_id 
-JOIN species s ON sp.species_id = s.id 
-WHERE a.owners_id = (SELECT id FROM owners WHERE full_name = 'Maisy Smith') 
-GROUP BY s.name 
-ORDER BY visit_count DESC LIMIT 1;
+SELECT s.name AS specialty 
+FROM visits v JOIN animals a ON v.animal_id = a.id 
+JOIN vets vt ON v.vet_id = vt.id 
+LEFT JOIN specializations sp ON vt.id = sp.vet_id  AND a.species_id = sp.species_id  
+JOIN species s ON a.species_id = s.id 
+WHERE vt.name = 'Maisy Smith' 
+GROUP BY s.name ORDER BY  COUNT(*) DESC LIMIT 1;
