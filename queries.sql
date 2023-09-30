@@ -48,3 +48,11 @@ SELECT neutered, max(escape_attempts) FROM animals GROUP BY neutered;
 SELECT neutered, min(weight_kg) FROM animals GROUP BY neutered;
 SELECT neutered, max(weight_kg) FROM animals GROUP BY neutered;
 SELECT neutered, avg(escape_attempts) FROM animals WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-30' GROUP BY neutered;
+
+
+BEGIN;
+UPDATE animals SET species_id = 1 WHERE name LIKE '%mon';
+UPDATE animals SET species_id = 2 'pokemon' WHERE species_id IS NULL OR species_id = '';
+SELECT * FROM animals;
+COMMIT;
+SELECT * FROM animals;
