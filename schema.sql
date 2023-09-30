@@ -15,17 +15,19 @@ ALTER TABLE animals ADD COLUMN species VARCHAR;
 CREATE TABLE owners (
     id INT PRIMARY KEY NOT NULL,
     full_name VARCHAR NOT NULL,
-    age INT,
+    age INT
 );
 
 CREATE TABLE species (
     id INT PRIMARY KEY NOT NULL,
-    name VARCHAR,
+    name VARCHAR
 );
 
 ALTER TABLE animals DROP COLUMN species;
-ALTER TABLE animals ADD CONSTRAINT FK_ANIMALS FOREIGN KEY (species_id) REFERENCES species(id);
-ALTER TABLE animals ADD CONSTRAINT FOREIGN KEY (owners_id) REFERENCES owners(id);
+ALTER TABLE animals ADD COLUMN species_id INT;
+ALTER TABLE animals ADD CONSTRAINT FK_ANIMALS_SPECIES FOREIGN KEY (species_id) REFERENCES species(id);
+ALTER TABLE animals ADD COLUMN owners_id INT;
+ALTER TABLE animals ADD CONSTRAINT FK_ANIMALS_OWNERS FOREIGN KEY (owners_id) REFERENCES owners(id);
 
 
 

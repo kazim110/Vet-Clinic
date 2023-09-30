@@ -26,3 +26,15 @@ VALUES (1,'Sam Smith',34),
 INSERT INTO species (id, name)
 VALUES (1,'digimon'),
 (2,'pokemon');
+
+BEGIN;
+UPDATE animals SET species_id = 1 WHERE name LIKE '%mon';
+UPDATE animals SET species_id = 2 WHERE species_id IS NULL OR species_id = '';
+SELECT * FROM animals;
+COMMIT;
+
+UPDATE animals SET owners_id = 1 WHERE name = 'Agumon';
+UPDATE animals SET owners_id = 2 WHERE name IN ('Gabumon','Pikachu');
+UPDATE animals SET owners_id = 3 WHERE name IN ('Devimon','Plantmon');
+UPDATE animals SET owners_id = 4 WHERE name IN ('Charmander','Squirtle','Blossom');
+UPDATE animals SET owners_id = 5 WHERE name IN ('Angemon','Boarmon');
